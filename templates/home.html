@@ -1,0 +1,126 @@
+<main>
+    <h1>newsflash</h1>
+    <p class="subtitle">A Python library for building interactive dashboards and web apps.</p>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Docs</a></li>
+            <li><a href="/">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="columns margin-top-4">
+        
+        <div class="flex-1 center">
+            <p class="label">
+                Select the type of wave:
+            </p>
+            {{ widgets["line-type-select"] | safe}}
+
+            <p class="label">
+                Select the amplitude of the wave:
+            </p>
+            {{ widgets["amplitude-select"] | safe}}
+        </div>
+        <div class="flex-1">
+            <h2>easy interactivity</h2>
+            <p>
+                Charts are rendered on the server, so you have full control over their content and appearance 
+                from within your Python code. Many chart types are supported out of the box, but you can also
+                create your own custom charts. If you can dream it, you can draw it!
+            </p>
+        </div>
+        
+    </div>
+    
+    <div class="columns margin-top-4">
+        <div class="flex-1">
+            <h2>beautiful, simple charts</h2>
+            <p>
+                Charts are rendered on the server, so you have full control over their content and appearance 
+                from within your Python code. Many chart types are supported out of the box, but you can also
+                create your own custom charts. If you can dream it, you can draw it!
+            </p>
+        </div>
+        
+        <div class="chart flex-1">
+            {{ widgets["line-chart"] | safe }}
+        </div>
+    </div>
+
+    <div class="col margin-top-4">
+        <h2>less magic, more control</h2>
+        <p>
+            Newsflash gives you the tools to get started quickly, but it doesn't hide the underlying technologies.
+            If you want to have fine-grained control over how your app looks you can edit the HTML and CSS directly.
+            You also control exactly which Python code gets executed for every possible user interaction.
+        </p>
+    </div>
+
+    
+    
+</main>
+
+<style>
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5;
+        padding-bottom: 4em;
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    nav > ul li {
+        display: inline-block;
+    }
+
+    a {
+        color: hsl(213, 54%, 50%);
+        margin-right: 0.5em;
+    }
+
+    .subtitle {
+        color: #777;
+        font-style: italic;
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    .columns {
+        display: flex;
+        gap: 2em;
+    }
+    
+    .center {
+        align-self: center;
+    }
+
+    .margin-top-4 {
+        margin-top: 4em;
+    }
+
+    .chart {
+        height: 250px;
+        background-color: hsl(28, 100%, 90%);
+        padding: 1em;
+        border-radius: 0.25em;
+    }
+
+    .flex-1 {
+        flex: 1;
+    }
+
+    .col {
+        max-width: 400px;
+        margin: 4em auto;
+    }
+
+    .label { 
+        color: #777;
+        margin-bottom: 0.25em;
+    }
+</style>
