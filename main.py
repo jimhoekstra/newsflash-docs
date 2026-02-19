@@ -27,7 +27,7 @@ class DemoBar(LineChart):
     def on_load(self) -> list[Widget]:
         self.set_title()
 
-        x_values = [i / 100 for i in range(1000)]
+        x_values = [i / 100 for i in range(int(4*pi*100)+50)]
         y_values = [self.get_y_value(x) for x in x_values]
 
         x_labels = {
@@ -35,6 +35,7 @@ class DemoBar(LineChart):
             pi: "π",
             2*pi: "2π",
             3*pi: "3π",
+            4*pi: "4π",
         }
         self.set_values(
             xs=x_values, 
@@ -54,10 +55,13 @@ class SineButton(Button):
 
 class AmplitudeSelect(Select):
     id: str = "amplitude-select"
-    options: list[str] = ["2", "5", "10", "500", "10000"]
+    options: list[str] = ["2", "5", "10", "400", "10000"]
 
-    def on_select(self, demo_bar_chart: DemoBar) -> list[Widget]:
+    def on_select(self, demo_bar_chart: DemoBar, line_type_select: "LineTypeSelect") -> list[Widget]:
         assert self.selected is not None
+        assert line_type_select.selected is not None
+
+        demo_bar_chart.line_type = line_type_select.selected
         demo_bar_chart.amplitude = int(self.selected)
         demo_bar_chart.on_load()
         return [demo_bar_chart]
@@ -67,9 +71,12 @@ class LineTypeSelect(Select):
     id: str = "line-type-select"
     options: list[str] = ["sine", "cosine"]
 
-    def on_select(self, demo_bar_chart: DemoBar) -> list[Widget]:
+    def on_select(self, demo_bar_chart: DemoBar, amplitude_select: "AmplitudeSelect") -> list[Widget]:
         assert self.selected is not None
+        assert amplitude_select.selected is not None
+
         demo_bar_chart.line_type = self.selected
+        demo_bar_chart.amplitude = int(amplitude_select.selected)
         demo_bar_chart.on_load()
         return [demo_bar_chart]
 

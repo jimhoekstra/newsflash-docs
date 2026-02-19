@@ -23,38 +23,36 @@
             </p>
             {{ widgets["amplitude-select"] | safe}}
         </div>
-        <div class="flex-1">
+        <div class="flex-1 center">
             <h2>easy interactivity</h2>
             <p>
-                Charts are rendered on the server, so you have full control over their content and appearance 
-                from within your Python code. Many chart types are supported out of the box, but you can also
-                create your own custom charts. If you can dream it, you can draw it!
+                For every possible user interaction you can define a callback function in Python. Every callback
+                function can use any widget(s) as input and update any widget(s) as output.
             </p>
         </div>
         
     </div>
     
     <div class="columns margin-top-4">
-        <div class="flex-1">
+        <div class="flex-1 center">
             <h2>beautiful, simple charts</h2>
             <p>
-                Charts are rendered on the server, so you have full control over their content and appearance 
-                from within your Python code. Many chart types are supported out of the box, but you can also
+                Many chart types are supported out of the box, but you can also
                 create your own custom charts. If you can dream it, you can draw it!
             </p>
         </div>
         
-        <div class="chart flex-1">
+        <div class="chart flex-1 center">
             {{ widgets["line-chart"] | safe }}
         </div>
     </div>
 
-    <div class="col margin-top-4">
+    <div class="margin-top-4">
         <h2>less magic, more control</h2>
         <p>
             Newsflash gives you the tools to get started quickly, but it doesn't hide the underlying technologies.
             If you want to have fine-grained control over how your app looks you can edit the HTML and CSS directly.
-            You also control exactly which Python code gets executed for every possible user interaction.
+            You also control exactly what Python code gets executed for every possible user interaction.
         </p>
     </div>
 
@@ -65,7 +63,7 @@
 <style>
     main {
         max-width: 800px;
-        margin: 0 auto;
+        margin: 2em auto;
         line-height: 1.5;
         padding-bottom: 4em;
     }
