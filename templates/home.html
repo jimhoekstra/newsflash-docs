@@ -10,7 +10,7 @@
         </ul>
     </nav>
 
-    <div class="columns margin-top-4">
+    <div class="columns margin-top-4 gap-2">
         
         <div class="flex-1 center">
             <p class="label">
@@ -18,10 +18,17 @@
             </p>
             {{ widgets["line-type-select"] | safe}}
 
-            <p class="label">
-                Select the amplitude of the wave:
-            </p>
-            {{ widgets["amplitude-select"] | safe}}
+            <div class="columns gap-1">
+                <div>
+                    <p class="label">amplitude:</p>
+                    {{ widgets["amplitude-select"] | safe}}
+                </div>
+                <div>
+                    <p class="label">periods:</p>
+                    {{ widgets["num-periods-select"] | safe}}
+                </div>
+
+            </div>
         </div>
         <div class="flex-1 center">
             <h2>easy interactivity</h2>
@@ -33,7 +40,7 @@
         
     </div>
     
-    <div class="columns margin-top-4">
+    <div class="columns gap-2 margin-top-4">
         <div class="flex-1 center">
             <h2>beautiful, simple charts</h2>
             <p>
@@ -90,6 +97,13 @@
 
     .columns {
         display: flex;
+    }
+
+    .gap-1 {
+        gap: 1em;
+    }
+
+    .gap-2 {
         gap: 2em;
     }
     
