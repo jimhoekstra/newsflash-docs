@@ -36,7 +36,7 @@ class DemoBar(LineChart):
         self.set_title(line_type=line_type_select.selected)
 
         x_values = [
-            i / 100 for i in range(int((num_periods_selected * 2 + 0.2) * pi * 100))
+            i / 15 for i in range(int((num_periods_selected * 2 + 0.2) * pi * 15))
         ]
 
         y_values = [
