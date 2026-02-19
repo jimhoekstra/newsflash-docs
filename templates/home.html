@@ -13,7 +13,7 @@
     <div class="columns margin-top-4 gap-2">
         
         <div class="flex-1 center">
-            <p class="label">
+            <p class="label margin-t-0">
                 Select the type of wave:
             </p>
             {{ widgets["line-type-select"] | safe}}
@@ -134,5 +134,9 @@
     .label { 
         color: #777;
         margin-bottom: 0.25em;
+    }
+
+    .margin-t-0 {
+        margin-top: 0;
     }
 </style>
