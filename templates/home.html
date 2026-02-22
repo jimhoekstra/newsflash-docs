@@ -1,21 +1,30 @@
 <main>
     <h1>newsflash</h1>
-    <p class="subtitle">A Python library for building interactive dashboards and web apps.</p>
+    <p class="subtitle">
+        A Python library for building interactive dashboards and web apps.
+    </p>
 
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Docs</a></li>
-            <li><a href="/">GitHub</a></li>
+            <li><a class="nav-link" href="/">Home</a></li>
+            <li><a class="nav-link" href="/">Docs</a></li>
+            <li><a class="nav-link" href="https://github.com/jimhoekstra/newsflash" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         </ul>
     </nav>
 
+    <div class="margin-top-4">
+        <p>
+            Newsflash is a Python library for building fast, interactive
+            web applications. It comes with many widgets, charts, layouts, and themes 
+            out of the box, so that you can get started quickly. This website
+            is actually a newsflash app itself, so feel free to take a look around
+            to get a sense of what it can do (or check out the <a href="https://github.com/jimhoekstra/newsflash-docs" target="_blank" rel="noopener noreferrer">code</a>)
+        </p>
+    </div>
+
     <div class="columns margin-top-4 gap-2">
-        
         <div class="flex-1 center">
-            <p class="label margin-t-0">
-                Select the type of wave:
-            </p>
+            <p class="label margin-t-0">Select the type of wave:</p>
             {{ widgets["line-type-select"] | safe}}
 
             <div class="columns gap-1">
@@ -27,44 +36,43 @@
                     <p class="label">periods:</p>
                     {{ widgets["num-periods-select"] | safe}}
                 </div>
-
             </div>
         </div>
         <div class="flex-1 center">
             <h2>easy interactivity</h2>
             <p>
-                For every possible user interaction you can define a callback function in Python. Every callback
-                function can use any widget(s) as input and update any widget(s) as output.
+                For every possible user interaction you can define a callback
+                function in Python. Every callback function can use any
+                widget(s) as input and update any widget(s) as output.
             </p>
         </div>
-        
     </div>
-    
+
     <div class="columns gap-2 margin-top-4">
         <div class="flex-1 center">
             <h2>beautiful, simple charts</h2>
             <p>
                 Many chart types are supported out of the box, but you can also
-                create your own custom charts. If you can dream it, you can draw it!
+                create your own custom charts. If you can dream it, you can draw
+                it!
             </p>
         </div>
-        
+
         <div class="chart flex-1 center">
             {{ widgets["line-chart"] | safe }}
         </div>
     </div>
 
     <div class="margin-top-4">
-        <h2>less magic, more control</h2>
+        <h2>full control</h2>
         <p>
-            Newsflash gives you the tools to get started quickly, but it doesn't hide the underlying technologies.
-            If you want to have fine-grained control over how your app looks you can edit the HTML and CSS directly.
-            You also control exactly what Python code gets executed for every possible user interaction.
+            Newsflash gives you the tools to get started quickly, but it doesn't
+            hide the underlying technologies. If you want to have fine-grained
+            control over how your app looks you can edit the HTML and CSS
+            directly. You also control exactly what Python code gets executed
+            for every possible user interaction.
         </p>
     </div>
-
-    
-    
 </main>
 
 <style>
@@ -85,6 +93,9 @@
 
     a {
         color: hsl(213, 54%, 50%);
+    }
+    
+    a.nav-link {
         margin-right: 0.5em;
     }
 
@@ -106,7 +117,7 @@
     .gap-2 {
         gap: 2em;
     }
-    
+
     .center {
         align-self: center;
     }
@@ -131,7 +142,7 @@
         margin: 4em auto;
     }
 
-    .label { 
+    .label {
         color: #777;
         margin-bottom: 0.25em;
     }

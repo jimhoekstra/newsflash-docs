@@ -13,11 +13,13 @@ class DemoBar(LineChart):
     def set_title(self, line_type: str) -> None:
         self.title = f"{line_type} wave"
 
-    def get_y_value(self, line_type: str, x: float, amplitude: int) -> float:
+    def get_y_values(
+        self, line_type: str, x_values: list[float], amplitude: int
+    ) -> list[float]:
         if line_type == "sine":
-            return sin(x) * amplitude
+            return [sin(x) * amplitude for x in x_values]
         elif line_type == "cosine":
-            return cos(x) * amplitude
+            return [cos(x) * amplitude for x in x_values]
         else:
             raise ValueError(f"Unknown line type: {line_type}")
 
@@ -27,34 +29,29 @@ class DemoBar(LineChart):
         amplitude_select: "AmplitudeSelect",
         num_periods_select: "NumPeriodsSelect",
     ) -> list[Widget]:
-        assert line_type_select.selected is not None
-        assert amplitude_select.selected is not None
-        assert num_periods_select.selected is not None
+        line_type = line_type_select.selected
+        amplitude = amplitude_select.selected
+        num_periods = num_periods_select.selected
 
-        num_periods_selected = int(num_periods_select.selected)
+        assert line_type is not None
+        assert amplitude is not None
+        assert num_periods is not None
 
-        self.set_title(line_type=line_type_select.selected)
+        num_periods = int(num_periods)
+        amplitude = int(amplitude)
 
-        x_values = [
-            i / 15 for i in range(int((num_periods_selected * 2 + 0.2) * pi * 15))
-        ]
+        self.set_title(line_type=line_type)
 
-        y_values = [
-            self.get_y_value(
-                line_type=line_type_select.selected,
-                x=x,
-                amplitude=int(amplitude_select.selected),
-            )
-            for x in x_values
-        ]
+        x_values = [i / 15 for i in range(int((num_periods * 2 + 0.2) * pi * 15))]
+
+        y_values = self.get_y_values(
+            line_type=line_type,
+            x_values=x_values,
+            amplitude=amplitude,
+        )
 
         x_labels = {
-            **{
-                i * pi: f"{i}π"
-                for i in range(
-                    0, num_periods_selected * 2 + 1, num_periods_selected // 2
-                )
-            },
+            i * pi: f"{i}π" for i in range(0, num_periods * 2 + 1, num_periods // 2)
         }
         self.set_values(xs=x_values, ys=y_values, x_labels=x_labels)
         return [self]
