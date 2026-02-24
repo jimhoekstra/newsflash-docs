@@ -12,13 +12,17 @@
         </ul>
     </nav>
 
-    <div class="margin-top-4">
+    <div class="margin-top-3">
         <p>
             Newsflash is a Python library for building fast, interactive
-            web applications. It comes with many widgets, charts, layouts, and themes 
-            out of the box, so that you can get started quickly. This website
-            is actually a newsflash app itself, so feel free to take a look around
-            to get a sense of what it can do (or check out the <a href="https://github.com/jimhoekstra/newsflash-docs" target="_blank" rel="noopener noreferrer">code</a>)
+            web applications. What makes it unique is that you have full
+            control over all interactivity 
+            in Python while sticking to web technologies like HTML and CSS for the 
+            layout and styling.
+            
+            This website
+            is a newsflash app itself and you can find the code for it on
+             <a href="https://github.com/jimhoekstra/newsflash-docs" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
     </div>
 
@@ -41,9 +45,10 @@
         <div class="flex-1 center">
             <h2>easy interactivity</h2>
             <p>
-                For every possible user interaction you can define a callback
-                function in Python. Every callback function can use any
-                widget(s) as input and update any widget(s) as output.
+                To create an interactive object you create widgets in your Python
+                code. Widgets have callback methods for user
+                interaction. Every callback method can use any
+                other widgets as input and update any widgets as output.
             </p>
         </div>
     </div>
@@ -53,8 +58,9 @@
             <h2>beautiful, simple charts</h2>
             <p>
                 Many chart types are supported out of the box, but you can also
-                create your own custom charts. If you can dream it, you can draw
-                it!
+                create your own custom charts. Charts are rendered on the backend
+                in SVG format (another web standard!) which makes the application
+                very fast and efficient.
             </p>
         </div>
 
@@ -122,6 +128,10 @@
         align-self: center;
     }
 
+    .margin-top-3 {
+        margin-top: 3em;
+    }
+    
     .margin-top-4 {
         margin-top: 4em;
     }
