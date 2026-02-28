@@ -19,10 +19,6 @@
             control over all interactivity 
             in Python while sticking to web technologies like HTML and CSS for the 
             layout and styling.
-            
-            This website
-            is a newsflash app itself and you can find the code for it on
-             <a href="https://github.com/jimhoekstra/newsflash-docs" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
     </div>
 
@@ -45,10 +41,9 @@
         <div class="flex-1 center">
             <h2>easy interactivity</h2>
             <p>
-                To create an interactive object you create widgets in your Python
-                code. Widgets have callback methods for user
-                interaction. Every callback method can use any
-                other widgets as input and update any widgets as output.
+                To create an interactive object you define widgets in your Python
+                code. Each widgets has its own callback method for user
+                interaction.
             </p>
         </div>
     </div>
@@ -58,9 +53,7 @@
             <h2>beautiful, simple charts</h2>
             <p>
                 Many chart types are supported out of the box, but you can also
-                create your own custom charts. Charts are rendered on the backend
-                in SVG format (another web standard!) which makes the application
-                very fast and efficient.
+                create your own custom charts.
             </p>
         </div>
 
@@ -73,10 +66,8 @@
         <h2>full control</h2>
         <p>
             Newsflash gives you the tools to get started quickly, but it doesn't
-            hide the underlying technologies. If you want to have fine-grained
-            control over how your app looks you can edit the HTML and CSS
-            directly. You also control exactly what Python code gets executed
-            for every possible user interaction.
+            hide the underlying technologies. You have fine-grained control about how
+            your app looks and behaves.
         </p>
     </div>
 </main>
@@ -139,6 +130,7 @@
     .chart {
         height: 250px;
         background-color: hsl(28, 100%, 90%);
+        /* background-color: #1e1e2e; */
         padding: 1em;
         border-radius: 0.25em;
     }
