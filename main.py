@@ -77,7 +77,7 @@ class AmplitudeSelect(Select):
 
 class NumPeriodsSelect(Select):
     id: str = "num-periods-select"
-    options: list[str] = ["2", "3", "6", "9", "25"]
+    options: list[str] = ["2", "3", "7", "11", "25"]
 
     def on_select(
         self,
@@ -111,20 +111,22 @@ class LineTypeSelect(Select):
         return [demo_bar_chart]
 
 
-home_page = Page(
-    id="/",
-    path="/",
-    title="newsflash docs",
-    template=("templates", "home.html"),
-    children=[
-        DemoBar(),
-        AmplitudeSelect(),
-        LineTypeSelect(),
-        NumPeriodsSelect(),
-    ],
-)
+class HomePage(Page):
+    id: str = "/"
+    path: str = "/"
+    title: str = "newsflash docs"
+    template: tuple[str, str] = ("templates", "home.html")
+
+    def compose(self) -> list[Widget]:
+        return [
+            DemoBar(),
+            AmplitudeSelect(),
+            LineTypeSelect(),
+            NumPeriodsSelect(),
+        ]
+
 
 app = App(
-    pages=[home_page],
+    pages=[HomePage()],
     template_folders=[("templates", Path.cwd() / "templates")],
 )

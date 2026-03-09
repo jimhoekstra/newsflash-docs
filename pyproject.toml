@@ -5,7 +5,7 @@ description = "Homepage and documentation website for the newsflash library"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "newsflash>=0.2.4",
+    "newsflash>=0.2.5",
 ]
 
 [dependency-groups]
