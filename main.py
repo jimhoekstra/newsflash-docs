@@ -131,5 +131,4 @@ class HomePage(Page):
 app = App(
     pages=[HomePage()],
     template_folders=[("templates", Path.cwd() / "templates")],
-    theme="newsflash",
 )
