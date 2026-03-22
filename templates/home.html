@@ -24,7 +24,7 @@
 
     <div class="columns margin-top-4 gap-2">
         <div class="flex-1 center">
-            <p class="label margin-t-0">Select the type of wave:</p>
+            <p class="label margin-t-0">select the type of wave:</p>
             {{ widgets["line-type-select"] | safe}}
 
             <div class="columns gap-1">
@@ -57,7 +57,7 @@
             </p>
         </div>
 
-        <div class="chart flex-1 center">
+        <div class="newsflash-chart flex-1 center">
             {{ widgets["line-chart"] | safe }}
         </div>
     </div>
@@ -90,6 +90,7 @@
 
     a {
         color: hsl(213, 54%, 50%);
+        text-decoration: none;
     }
     
     a.nav-link {
@@ -127,12 +128,8 @@
         margin-top: 4em;
     }
 
-    .chart {
+    .newsflash-chart {
         height: 250px;
-        background-color: hsl(28, 100%, 90%);
-        /* background-color: #1e1e2e; */
-        padding: 1em;
-        border-radius: 0.25em;
     }
 
     .flex-1 {

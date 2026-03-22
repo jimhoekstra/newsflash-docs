@@ -396,16 +396,16 @@ wheels = [
 
 [[package]]
 name = "newsflash"
-version = "0.2.5"
+version = "0.2.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastapi", extra = ["standard"] },
     { name = "fonttools" },
     { name = "polars" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5d/6f/f43eeb6a49be8497fe58ba911eba281b1f89629491141d794a271811ffbf/newsflash-0.2.5.tar.gz", hash = "sha256:bf44826a1019f85a5567fa42179f875164d0606a4f76c841db076a67a68da807", size = 179106, upload-time = "2026-03-09T20:41:35.666Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f5/8a/90b4444049a2dc306b813b585aba3f4e1e12056fb7351613b9af69d9f94e/newsflash-0.2.7.tar.gz", hash = "sha256:2e46de5e1c21431f7f003f798cc9790d57515a70bd7d2e451f8d109821204ebb", size = 178481, upload-time = "2026-03-22T21:16:07.608Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/17/7f/be918777be8c082a010bf71eb8511f60b3fef0a9c376b2d92e29ea9c6500/newsflash-0.2.5-py3-none-any.whl", hash = "sha256:bf7e8ee4a90e8bff83faa8c08fcbfe34b4158167bbfde8d454866244590c5217", size = 105433, upload-time = "2026-03-09T20:41:34.468Z" },
+    { url = "https://files.pythonhosted.org/packages/a9/ea/c6df6c79990d15cfed5be0968ce91a54f8f300c1d8146c9264b955971f6a/newsflash-0.2.7-py3-none-any.whl", hash = "sha256:aed900dacf533cd3ac561ac37dc90512e0ebd7b3473c1ee6bc2e213ccf8152ac", size = 104715, upload-time = "2026-03-22T21:16:06.299Z" },
 ]
 
 [[package]]
@@ -422,7 +422,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "newsflash", specifier = ">=0.2.5" }]
+requires-dist = [{ name = "newsflash", specifier = ">=0.2.7" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.15.1" }]

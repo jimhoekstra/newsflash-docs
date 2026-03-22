@@ -1,14 +1,16 @@
+from typing import Annotated
 from pathlib import Path
 from math import cos, sin, pi
 
 from newsflash import App, Page
 from newsflash.widgets import LineChart, Select
 from newsflash.widgets.widgets import Widget
+from newsflash.svg.element import TemplateParam
 
 
 class DemoBar(LineChart):
-    id: str = "line-chart"
-    title: str = "sine wave"
+    id: Annotated[str, TemplateParam()] = "line-chart"
+    title: Annotated[str, TemplateParam()] = "sine wave"
 
     def set_title(self, line_type: str) -> None:
         self.title = f"{line_type} wave"
@@ -58,8 +60,8 @@ class DemoBar(LineChart):
 
 
 class AmplitudeSelect(Select):
-    id: str = "amplitude-select"
-    options: list[str] = ["2", "5", "10", "400", "10000"]
+    id: Annotated[str, TemplateParam()] = "amplitude-select"
+    options: Annotated[list[str], TemplateParam()] = ["2", "5", "10", "400", "10000"]
 
     def on_select(
         self,
@@ -76,8 +78,8 @@ class AmplitudeSelect(Select):
 
 
 class NumPeriodsSelect(Select):
-    id: str = "num-periods-select"
-    options: list[str] = ["2", "3", "7", "11", "25"]
+    id: Annotated[str, TemplateParam()] = "num-periods-select"
+    options: Annotated[list[str], TemplateParam()] = ["2", "3", "7", "11", "25"]
 
     def on_select(
         self,
@@ -94,8 +96,8 @@ class NumPeriodsSelect(Select):
 
 
 class LineTypeSelect(Select):
-    id: str = "line-type-select"
-    options: list[str] = ["sine", "cosine"]
+    id: Annotated[str, TemplateParam()] = "line-type-select"
+    options: Annotated[list[str], TemplateParam()] = ["sine", "cosine"]
 
     def on_select(
         self,
@@ -129,4 +131,5 @@ class HomePage(Page):
 app = App(
     pages=[HomePage()],
     template_folders=[("templates", Path.cwd() / "templates")],
+    theme="newsflash",
 )
